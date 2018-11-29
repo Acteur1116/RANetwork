@@ -1,4 +1,4 @@
-package com.renard.rjnetwork.api;
+package com.renard.rjnetworkdemo.api;
 
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import com.orhanobut.logger.Logger;
 import com.renard.rjnetwork.NetworkApplication;
 import com.renard.rjnetwork.utils.NetUtil;
+import com.renard.rjnetworkdemo.api.bean.NewsInfo;
 
 import java.io.File;
 import java.io.IOException;

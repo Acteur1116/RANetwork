@@ -3,6 +3,8 @@ package com.renard.rjnetwork.injector.modules;
 import android.content.Context;
 
 import com.renard.rjnetwork.NetworkApplication;
+import com.renard.rjnetwork.local.table.DaoSession;
+import com.renard.rjnetwork.rxbus.RxBus;
 
 import javax.inject.Singleton;
 
@@ -17,13 +19,13 @@ import dagger.Provides;
 public class ApplicationModule {
 
     private final NetworkApplication mApplication;
-//    private final DaoSession mDaoSession;
-//    private final RxBus mRxBus;
+    private final DaoSession mDaoSession;
+    private final RxBus mRxBus;
 
-    public ApplicationModule(NetworkApplication application) {
+    public ApplicationModule(NetworkApplication application, DaoSession daoSession, RxBus rxBus) {
         mApplication = application;
-//        mDaoSession = daoSession;
-//        mRxBus = rxBus;
+        mDaoSession = daoSession;
+        mRxBus = rxBus;
     }
 
     @Provides
@@ -32,15 +34,15 @@ public class ApplicationModule {
         return mApplication.getApplicationContext();
     }
 
-//    @Provides
-//    @Singleton
-//    RxBus provideRxBus() {
-//        return mRxBus;
-//    }
-//
-//    @Provides
-//    @Singleton
-//    DaoSession provideDaoSession() {
-//        return mDaoSession;
-//    }
+    @Provides
+    @Singleton
+    RxBus provideRxBus() {
+        return mRxBus;
+    }
+
+    @Provides
+    @Singleton
+    DaoSession provideDaoSession() {
+        return mDaoSession;
+    }
 }

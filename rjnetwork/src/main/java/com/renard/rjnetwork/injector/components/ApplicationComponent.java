@@ -2,7 +2,10 @@ package com.renard.rjnetwork.injector.components;
 
 import android.content.Context;
 
+import com.renard.rjnetwork.Base.BaseActivity;
 import com.renard.rjnetwork.injector.modules.ApplicationModule;
+import com.renard.rjnetwork.local.table.DaoSession;
+import com.renard.rjnetwork.rxbus.RxBus;
 
 import javax.inject.Singleton;
 
@@ -20,6 +23,6 @@ public interface ApplicationComponent {
 
     // provide
     Context getContext();
-//    RxBus getRxBus();
-//    DaoSession getDaoSession();
+    RxBus getRxBus();
+    DaoSession getDaoSession();
 }
