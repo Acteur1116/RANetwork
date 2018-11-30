@@ -77,23 +77,25 @@ public class NewsListFragment extends BaseFragment<BasePresenter> implements New
 
     @Override
     protected void initInjector() {
-        DaggerNewsListComponent.builder()
-                .applicationComponent(getAppComponent())
-                .newsListModule(new NewsListModule(this, mNewsId))
-                .build()
-                .inject(this);
+        // FIXME: 2018/11/30
+//        DaggerNewsListComponent.builder()
+//                .applicationComponent(getAppComponent())
+//                .newsListModule(new NewsListModule(this, mNewsId))
+//                .build()
+//                .inject(this);
     }
 
     @Override
     protected void initViews() {
-        SlideInRightAnimationAdapter animAdapter = new SlideInRightAnimationAdapter(mAdapter);
-        RecyclerViewHelper.initRecyclerViewV(mContext, mRvNewsList, true, new AlphaInAnimationAdapter(animAdapter));
-        mAdapter.setRequestDataListener(new OnRequestDataListener() {
-            @Override
-            public void onLoadMore() {
-                mPresenter.getMoreData();
-            }
-        });
+        // FIXME: 2018/11/30
+//        SlideInRightAnimationAdapter animAdapter = new SlideInRightAnimationAdapter(mAdapter);
+//        RecyclerViewHelper.initRecyclerViewV(mContext, mRvNewsList, true, new AlphaInAnimationAdapter(animAdapter));
+//        mAdapter.setRequestDataListener(new OnRequestDataListener() {
+//            @Override
+//            public void onLoadMore() {
+//                mPresenter.getMoreData();
+//            }
+//        });
     }
 
     @Override

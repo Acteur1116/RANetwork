@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
 
+
 android {
     compileSdkVersion rootProject.ext.compileSdk
-    buildToolsVersion rootProject.ext.buildTools
+
     defaultConfig {
         applicationId "com.renard.rjnetworkdemo"
         minSdkVersion rootProject.ext.minSdk
@@ -21,6 +22,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
     implementation "com.android.support:appcompat-v7:${rootProject.ext.support}"
     implementation "com.android.support:support-v4:${rootProject.ext.support}"
     implementation "com.android.support:design:${rootProject.ext.support}"
@@ -29,5 +31,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     compile project(path: ':rjnetwork')
-
+    // butterknife
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.2.1'
+    // dagger
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.6'
 }

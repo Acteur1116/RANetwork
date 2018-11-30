@@ -4,9 +4,12 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.renard.rjnetwork.banner.loader.ImageLoader;
 import com.renard.rjnetwork.recyclerview.adapter.BaseMultiItemQuickAdapter;
 import com.renard.rjnetwork.recyclerview.adapter.BaseViewHolder;
+import com.renard.rjnetwork.utils.DefIconFactory;
+import com.renard.rjnetwork.utils.ImageLoader;
+import com.renard.rjnetwork.utils.ListUtils;
+import com.renard.rjnetwork.utils.StringUtils;
 import com.renard.rjnetwork.widget.RippleView;
 import com.renard.rjnetworkdemo.R;
 import com.renard.rjnetworkdemo.adapter.item.NewsMultiItem;
@@ -58,26 +61,26 @@ public class NewsMultiListAdapter extends BaseMultiItemQuickAdapter<NewsMultiIte
         holder.setText(R.id.tv_title, item.getTitle())
                 .setText(R.id.tv_source, StringUtils.clipNewsSource(item.getSource()))
                 .setText(R.id.tv_time, item.getPtime());
-        // 设置标签
-        if (NewsUtils.isNewsSpecial(item.getSkipType())) {
-            LabelView labelView = holder.getView(R.id.label_view);
-            labelView.setVisibility(View.VISIBLE);
-            labelView.setText("专题");
-        } else {
-            holder.setVisible(R.id.label_view, false);
-        }
+//        // 设置标签
+//        if (NewsUtils.isNewsSpecial(item.getSkipType())) {
+//            LabelView labelView = holder.getView(R.id.label_view);
+//            labelView.setVisibility(View.VISIBLE);
+//            labelView.setText("专题");
+//        } else {
+//            holder.setVisible(R.id.label_view, false);
+//        }
         // 波纹效果
         RippleView rippleLayout = holder.getView(R.id.item_ripple);
         rippleLayout.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
             public void onComplete(RippleView rippleView) {
-                if (NewsUtils.isNewsSpecial(item.getSkipType())) {
-                    SpecialActivity.launch(mContext, item.getSpecialID());
-                } else {
-                    // 旧的实现方式和网易的比较相近，感兴趣的可以切换看看
-//                    NewsDetailActivity.launch(mContext, item.getPostid());
-                    NewsArticleActivity.launch(mContext, item.getPostid());
-                }
+//                if (NewsUtils.isNewsSpecial(item.getSkipType())) {
+//                    SpecialActivity.launch(mContext, item.getSpecialID());
+//                } else {
+//                    // 旧的实现方式和网易的比较相近，感兴趣的可以切换看看
+////                    NewsDetailActivity.launch(mContext, item.getPostid());
+//                    NewsArticleActivity.launch(mContext, item.getPostid());
+//                }
             }
         });
     }
@@ -110,7 +113,7 @@ public class NewsMultiListAdapter extends BaseMultiItemQuickAdapter<NewsMultiIte
         rippleLayout.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
             public void onComplete(RippleView rippleView) {
-                PhotoSetActivity.launch(mContext, item.getPhotosetID());
+//                PhotoSetActivity.launch(mContext, item.getPhotosetID());
             }
         });
     }

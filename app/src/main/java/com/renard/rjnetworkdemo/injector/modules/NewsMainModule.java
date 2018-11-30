@@ -21,13 +21,11 @@ public class NewsMainModule {
     public NewsMainModule(NewsMainFragment view) {
         mView = view;
     }
-
     @PerFragment
     @Provides
     public RxBusPresenter provideMainPresenter(DaoSession daoSession, RxBus rxBus) {
         return new NewsMainPresenter(mView, daoSession.getNewsTypeInfoDao(), rxBus);
     }
-
     @PerFragment
     @Provides
     public ViewPagerAdapter provideViewPagerAdapter() {

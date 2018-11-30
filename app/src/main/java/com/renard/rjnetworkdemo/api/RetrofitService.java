@@ -66,9 +66,9 @@ public class RetrofitService {
      */
     public static void init() {
         // 指定缓存路径,缓存大小100Mb
-        Cache cache = new Cache(new File(NetworkApplication.getContext().getCacheDir(), "HttpCache"),
-                1024 * 1024 * 100);
-        OkHttpClient okHttpClient = new OkHttpClient.Builder().cache(cache)
+//        Cache cache = new Cache(new File(NetworkApplication.getContext().getCacheDir(), "HttpCache"),
+//                1024 * 1024 * 100);
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .retryOnConnectionFailure(true)
                 .addInterceptor(sLoggingInterceptor)
                 .addInterceptor(sRewriteCacheControlInterceptor)

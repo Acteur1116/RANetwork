@@ -13,7 +13,7 @@ import dagger.Component;
  * 新闻列表 Component
  */
 @PerFragment
-@Component(dependencies = ApplicationComponent.class, modules = NewsListModule.class)
+@Component(dependencies = ApplicationComponent.class, modules = {NewsListModule.class})
 public interface NewsListComponent {
     void inject(NewsListFragment fragment);
 }
