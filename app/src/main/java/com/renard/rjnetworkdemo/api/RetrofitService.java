@@ -51,8 +51,10 @@ public class RetrofitService {
     static final String AVOID_HTTP403_FORBIDDEN = "User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11";
 
     private static final String API_HOST = "http://c.3g.163.com/";
+    private static final String WELFARE_HOST = "http://gank.io/";
 
     private static URLStringApi ApiService;
+    private static IWelfareApi sWelfareService;
     // 递增页码
     private static final int INCREASE_PAGE = 20;
 
@@ -66,9 +68,9 @@ public class RetrofitService {
      */
     public static void init() {
         // 指定缓存路径,缓存大小100Mb
-//        Cache cache = new Cache(new File(NetworkApplication.getContext().getCacheDir(), "HttpCache"),
-//                1024 * 1024 * 100);
-        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+        Cache cache = new Cache(new File(NetworkApplication.getContext().getCacheDir(), "HttpCache"),
+                1024 * 1024 * 100);
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().cache(cache)
                 .retryOnConnectionFailure(true)
                 .addInterceptor(sLoggingInterceptor)
                 .addInterceptor(sRewriteCacheControlInterceptor)
@@ -83,7 +85,13 @@ public class RetrofitService {
                 .baseUrl(API_HOST)
                 .build();
         ApiService = retrofit.create(URLStringApi.class);
-
+        retrofit = new Retrofit.Builder()
+                .client(okHttpClient)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .baseUrl(WELFARE_HOST)
+                .build();
+        sWelfareService = retrofit.create(IWelfareApi.class);
     }
 
     /**

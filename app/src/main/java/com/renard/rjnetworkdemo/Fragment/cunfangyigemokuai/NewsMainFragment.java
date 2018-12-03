@@ -11,12 +11,13 @@ import android.view.MenuItem;
 import com.renard.rjnetwork.Base.BaseFragment;
 import com.renard.rjnetwork.Base.RxBusPresenter;
 import com.renard.rjnetwork.adapter.ViewPagerAdapter;
-import com.renard.rjnetwork.local.table.NewsTypeInfo;
-import com.renard.rjnetwork.rxbus.event.ChannelEvent;
+import com.renard.rjnetworkdemo.Fragment.channel.ChannelActivity;
 import com.renard.rjnetworkdemo.Fragment.list.NewsListFragment;
 import com.renard.rjnetworkdemo.R;
+import com.renard.rjnetworkdemo.event.ChannelEvent;
 import com.renard.rjnetworkdemo.injector.components.DaggerNewsMainComponent;
 import com.renard.rjnetworkdemo.injector.modules.NewsMainModule;
+import com.renard.rjnetworkdemo.local.table.NewsTypeInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,15 +94,13 @@ public class NewsMainFragment extends BaseFragment<RxBusPresenter> implements Ne
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        // FIXME: 2018/11/30 
         inflater.inflate(R.menu.menu_channel, menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // FIXME: 2018/11/30 
         if (item.getItemId() == R.id.item_channel) {
-//            ChannelActivity.launch(mContext);
+            ChannelActivity.launch(mContext);
             return true;
         }
         return false;

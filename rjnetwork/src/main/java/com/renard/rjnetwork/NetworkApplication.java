@@ -36,6 +36,7 @@ public class NetworkApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        sContext=getApplicationContext();
         _initDatabase();
         _initInjector();
         _initConfig();

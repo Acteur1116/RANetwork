@@ -1,8 +1,8 @@
-package com.renard.rjnetwork.rxbus.event;
+package com.renard.rjnetworkdemo.event;
 
 import android.support.annotation.IntDef;
 
-import com.renard.rjnetwork.local.table.NewsTypeInfo;
+import com.renard.rjnetworkdemo.local.table.NewsTypeInfo;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,8 +10,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created by long on 2016/9/2.
- * 数据库更新事件
+ * Created by Riven_rabbit on 2018/12/3
  */
 public class ChannelEvent {
 
@@ -46,6 +45,4 @@ public class ChannelEvent {
         this.fromPos = fromPos;
         this.toPos = toPos;
     }
-
-
 }

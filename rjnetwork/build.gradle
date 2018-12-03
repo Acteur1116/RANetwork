@@ -19,10 +19,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-
         greendao{
-            schemaVersion 2
-//            daoPackage 'com.renard.rjnetwork.local.table'
+            schemaVersion 1
+            daoPackage 'com.renard.rjnetworkdemo.local.table'
 //            targetGenDir 'src/main/java'
         }
     }
