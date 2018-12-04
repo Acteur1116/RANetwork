@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.renard.rjnetwork.Base.BaseActivity;
+import com.renard.rjnetwork.local.table.NewsTypeInfo;
 import com.renard.rjnetwork.recyclerview.adapter.BaseQuickAdapter;
 import com.renard.rjnetwork.recyclerview.helper.RecyclerViewHelper;
 import com.renard.rjnetwork.recyclerview.listener.OnItemMoveListener;
@@ -15,7 +16,6 @@ import com.renard.rjnetwork.recyclerview.listener.OnRemoveDataListener;
 import com.renard.rjnetworkdemo.R;
 import com.renard.rjnetworkdemo.injector.components.DaggerManageComponent;
 import com.renard.rjnetworkdemo.injector.modules.ChannelModule;
-import com.renard.rjnetworkdemo.local.table.NewsTypeInfo;
 
 import java.util.List;
 

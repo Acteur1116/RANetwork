@@ -2,10 +2,10 @@ package com.renard.rjnetworkdemo.adapter;
 
 import android.content.Context;
 
+import com.renard.rjnetwork.local.table.NewsTypeInfo;
 import com.renard.rjnetwork.recyclerview.adapter.BaseQuickAdapter;
 import com.renard.rjnetwork.recyclerview.adapter.BaseViewHolder;
 import com.renard.rjnetworkdemo.R;
-import com.renard.rjnetworkdemo.local.table.NewsTypeInfo;
 
 import java.util.List;
 

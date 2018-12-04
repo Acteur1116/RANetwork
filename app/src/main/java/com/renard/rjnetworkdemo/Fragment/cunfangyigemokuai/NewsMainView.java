@@ -1,6 +1,6 @@
 package com.renard.rjnetworkdemo.Fragment.cunfangyigemokuai;
 
-import com.renard.rjnetworkdemo.local.table.NewsTypeInfo;
+import com.renard.rjnetwork.local.table.NewsTypeInfo;
 
 import java.util.List;
 

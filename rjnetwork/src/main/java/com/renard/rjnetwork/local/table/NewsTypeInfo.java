@@ -1,4 +1,4 @@
-package com.renard.rjnetworkdemo.local.table;
+package com.renard.rjnetwork.local.table;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;

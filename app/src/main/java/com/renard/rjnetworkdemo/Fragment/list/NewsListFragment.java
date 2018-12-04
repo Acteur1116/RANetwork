@@ -14,6 +14,7 @@ import com.renard.rjnetwork.recyclerview.listener.OnRequestDataListener;
 import com.renard.rjnetworkdemo.R;
 import com.renard.rjnetworkdemo.adapter.item.NewsMultiItem;
 import com.renard.rjnetworkdemo.api.bean.NewsInfo;
+import com.renard.rjnetworkdemo.injector.components.DaggerNewsListComponent;
 import com.renard.rjnetworkdemo.injector.modules.NewsListModule;
 
 import java.util.List;
@@ -21,6 +22,8 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
+import jp.wasabeef.recyclerview.adapters.SlideInRightAnimationAdapter;
 
 /**
  * Created by Riven_rabbit on 2018/11/29
@@ -77,25 +80,23 @@ public class NewsListFragment extends BaseFragment<BasePresenter> implements New
 
     @Override
     protected void initInjector() {
-        // FIXME: 2018/11/30
-//        DaggerNewsListComponent.builder()
-//                .applicationComponent(getAppComponent())
-//                .newsListModule(new NewsListModule(this, mNewsId))
-//                .build()
-//                .inject(this);
+        DaggerNewsListComponent.builder()
+                .applicationComponent(getAppComponent())
+                .newsListModule(new NewsListModule(this, mNewsId))
+                .build()
+                .inject(this);
     }
 
     @Override
     protected void initViews() {
-        // FIXME: 2018/11/30
-//        SlideInRightAnimationAdapter animAdapter = new SlideInRightAnimationAdapter(mAdapter);
-//        RecyclerViewHelper.initRecyclerViewV(mContext, mRvNewsList, true, new AlphaInAnimationAdapter(animAdapter));
-//        mAdapter.setRequestDataListener(new OnRequestDataListener() {
-//            @Override
-//            public void onLoadMore() {
-//                mPresenter.getMoreData();
-//            }
-//        });
+        SlideInRightAnimationAdapter animAdapter = new SlideInRightAnimationAdapter(mAdapter);
+        RecyclerViewHelper.initRecyclerViewV(mContext, mRvNewsList, true, new AlphaInAnimationAdapter(animAdapter));
+        mAdapter.setRequestDataListener(new OnRequestDataListener() {
+            @Override
+            public void onLoadMore() {
+                mPresenter.getMoreData();
+            }
+        });
     }
 
     @Override

@@ -2,7 +2,7 @@ package com.renard.rjnetworkdemo.event;
 
 import android.support.annotation.IntDef;
 
-import com.renard.rjnetworkdemo.local.table.NewsTypeInfo;
+import com.renard.rjnetwork.local.table.NewsTypeInfo;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

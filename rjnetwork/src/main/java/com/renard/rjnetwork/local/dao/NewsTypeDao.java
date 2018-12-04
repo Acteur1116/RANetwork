@@ -1,4 +1,4 @@
-package com.renard.rjnetworkdemo.local.dao;
+package com.renard.rjnetwork.local.dao;
 
 import android.content.Context;
 
@@ -11,7 +11,7 @@ import com.renard.rjnetwork.utils.GsonHelper;
 import java.util.List;
 
 /**
- * Created by Riven_rabbit on 2018/12/3
+ * Created by Riven_rabbit on 2018/12/4
  */
 public class NewsTypeDao {
     // 所有栏目

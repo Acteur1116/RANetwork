@@ -2,8 +2,9 @@ package com.renard.rjnetworkdemo.Fragment.cunfangyigemokuai;
 
 import com.orhanobut.logger.Logger;
 import com.renard.rjnetwork.Base.RxBusPresenter;
+import com.renard.rjnetwork.local.table.NewsTypeInfo;
+import com.renard.rjnetwork.local.table.NewsTypeInfoDao;
 import com.renard.rjnetwork.rxbus.RxBus;
-import com.renard.rjnetworkdemo.local.table.NewsTypeInfo;
 
 import java.util.List;
 

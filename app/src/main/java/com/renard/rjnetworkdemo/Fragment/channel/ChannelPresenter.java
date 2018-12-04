@@ -1,10 +1,11 @@
 package com.renard.rjnetworkdemo.Fragment.channel;
 
 import com.orhanobut.logger.Logger;
+import com.renard.rjnetwork.local.table.NewsTypeInfo;
+import com.renard.rjnetwork.local.table.NewsTypeInfoDao;
 import com.renard.rjnetwork.rxbus.RxBus;
 import com.renard.rjnetworkdemo.event.ChannelEvent;
 import com.renard.rjnetworkdemo.local.dao.NewsTypeDao;
-import com.renard.rjnetworkdemo.local.table.NewsTypeInfo;
 
 import java.util.ArrayList;
 import java.util.List;

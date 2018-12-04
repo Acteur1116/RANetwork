@@ -20,8 +20,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         greendao{
-            schemaVersion 1
-            daoPackage 'com.renard.rjnetworkdemo.local.table'
+            schemaVersion 2
+            daoPackage 'com.renard.rjnetwork.local.table'
 //            targetGenDir 'src/main/java'
         }
     }
@@ -67,4 +67,6 @@ dependencies {
     //轻量级glide 重量级fresco
     compile 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    // recyclerview-animators
+    compile 'jp.wasabeef:recyclerview-animators:2.2.3'
 }
