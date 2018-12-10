@@ -31,7 +31,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     compile project(path: ':rjnetwork')
     // butterknife
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     // dagger
     annotationProcessor 'com.google.dagger:dagger-compiler:2.6'
 

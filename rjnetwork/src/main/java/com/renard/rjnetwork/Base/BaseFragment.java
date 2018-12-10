@@ -4,6 +4,7 @@ package com.renard.rjnetwork.Base;
  * Created by Riven_rabbit on 2018/11/28
  */
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.renard.rjnetwork.NetworkApplication;
+import com.renard.rjnetwork.R;
 import com.renard.rjnetwork.R2;
 import com.renard.rjnetwork.injector.components.ApplicationComponent;
 import com.renard.rjnetwork.utils.SwipeRefreshHelper;
@@ -31,10 +33,10 @@ public abstract class BaseFragment<T extends BasePresenter> extends RxFragment i
     /**
      * 注意，资源的ID一定要一样
      */
-    @Nullable
+
     @BindView(R2.id.empty_layout)
     EmptyLayout mEmptyLayout;
-    @Nullable
+
     @BindView(R2.id.swipe_refresh)
     SwipeRefreshLayout mSwipeRefresh;
     @Inject
@@ -57,7 +59,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends RxFragment i
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (mRootView == null) {
             mRootView = inflater.inflate(attachLayoutRes(), null);
-            ButterKnife.bind(this, mRootView);
+            ButterKnife.bind(this,mRootView);
             initInjector();
             initViews();
             initSwipeRefresh();
