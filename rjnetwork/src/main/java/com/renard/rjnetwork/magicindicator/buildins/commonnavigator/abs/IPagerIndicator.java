@@ -1,7 +1,7 @@
 package com.renard.rjnetwork.magicindicator.buildins.commonnavigator.abs;
 
 
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.model.PositionData;
+import com.renard.rjnetwork.magicindicator.buildins.commonnavigator.model.PositionData;
 
 import java.util.List;
 

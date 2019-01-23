@@ -2,7 +2,7 @@ package com.renard.rjnetwork.magicindicator.buildins.commonnavigator.titles;
 
 import android.content.Context;
 
-import net.lucode.hackware.magicindicator.buildins.ArgbEvaluatorHolder;
+import com.renard.rjnetwork.magicindicator.buildins.ArgbEvaluatorHolder;
 
 
 /**
