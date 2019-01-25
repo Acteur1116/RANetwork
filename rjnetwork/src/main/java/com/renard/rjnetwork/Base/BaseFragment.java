@@ -33,11 +33,8 @@ public abstract class BaseFragment<T extends BasePresenter> extends RxFragment i
     /**
      * 注意，资源的ID一定要一样
      */
-
-    @BindView(R2.id.empty_layout)
     EmptyLayout mEmptyLayout;
 
-    @BindView(R2.id.swipe_refresh)
     SwipeRefreshLayout mSwipeRefresh;
     @Inject
     protected T mPresenter;
@@ -60,6 +57,8 @@ public abstract class BaseFragment<T extends BasePresenter> extends RxFragment i
         if (mRootView == null) {
             mRootView = inflater.inflate(attachLayoutRes(), null);
             ButterKnife.bind(this,mRootView);
+            mSwipeRefresh=mRootView.findViewById(R.id.swipe_refresh);
+            mEmptyLayout=mRootView.findViewById(R.id.empty_layout);
             initInjector();
             initViews();
             initSwipeRefresh();

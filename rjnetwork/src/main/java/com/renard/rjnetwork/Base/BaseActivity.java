@@ -32,8 +32,6 @@ public abstract class BaseActivity <T extends BasePresenter> extends RxAppCompat
     /**
      * 把 EmptyLayout 放在基类统一处理，@Nullable 表明 View 可以为 null，详细可看 ButterKnife
      */
-    @Nullable
-    @BindView(R2.id.empty_layout)
     protected EmptyLayout mEmptyLayout;
     /**
      * 把 Presenter 提取到基类需要配合基类的 initInjector() 进行注入，如果继承这个基类则必定要提供一个 Presenter 注入方法，
@@ -44,8 +42,6 @@ public abstract class BaseActivity <T extends BasePresenter> extends RxAppCompat
     /**
      * 刷新控件，注意，资源的ID一定要一样
      */
-    @Nullable
-    @BindView(R2.id.swipe_refresh)
     SwipeRefreshLayout mSwipeRefresh;
 
     /**
@@ -77,6 +73,8 @@ public abstract class BaseActivity <T extends BasePresenter> extends RxAppCompat
         super.onCreate(savedInstanceState);
         setContentView(attachLayoutRes());
         ButterKnife.bind(this);
+        mSwipeRefresh=this.findViewById(R.id.swipe_refresh);
+        mEmptyLayout=this.findViewById(R.id.empty_layout);
         initInjector();
         initViews();
         initSwipeRefresh();
