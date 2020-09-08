@@ -61,7 +61,7 @@ dependencies {
     // logger
     compile 'com.orhanobut:logger:1.15'
     // greendao
-    compile 'org.greenrobot:greendao:3.1.0'
+    compile 'org.greenrobot:greendao:3.3.0'
     // SpinKit
     compile 'com.github.ybq:Android-SpinKit:1.2.0'
     //轻量级glide 重量级fresco
