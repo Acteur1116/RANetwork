@@ -20,6 +20,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
 
+import com.renard.tinker.util.Utils;
 import com.tencent.tinker.lib.service.DefaultTinkerResultService;
 import com.tencent.tinker.lib.service.PatchResult;
 import com.tencent.tinker.lib.util.TinkerLog;
@@ -27,7 +28,6 @@ import com.tencent.tinker.lib.util.TinkerServiceInternals;
 
 import java.io.File;
 
-import tinker.sample.android.util.Utils;
 
 /**
  * optional, you can just use DefaultTinkerResultService

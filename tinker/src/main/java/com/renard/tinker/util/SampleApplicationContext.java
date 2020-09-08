@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package tinker.sample.android.util;
+package com.renard.tinker.util;
 
 import android.app.Application;
 import android.content.Context;

@@ -30,6 +30,8 @@ public final class ImageLoader {
         if (NetUtil.isWifiConnected(context)) {
             view.setScaleType(ImageView.ScaleType.FIT_XY);
 //            Glide.with(context).load(url).fitCenter().dontAnimate().placeholder(defaultResId).into(view);
+            RequestOptions requestOptions=new RequestOptions().centerCrop().dontAnimate().placeholder(defaultResId);
+            Glide.with(context).load(url).apply(requestOptions).into(view);
         } else {
             view.setImageResource(defaultResId);
         }
@@ -38,6 +40,8 @@ public final class ImageLoader {
     public static void loadCenterCrop(Context context, String url, ImageView view, int defaultResId) {
         if (NetUtil.isWifiConnected(context)) {
 //            Glide.with(context).load(url).centerCrop().dontAnimate().placeholder(defaultResId).into(view);
+            RequestOptions requestOptions=new RequestOptions().centerCrop().dontAnimate().placeholder(defaultResId);
+            Glide.with(context).load(url).apply(requestOptions).into(view);
         } else {
             view.setImageResource(defaultResId);
         }
@@ -46,6 +50,8 @@ public final class ImageLoader {
     public static void loadFitCenter(Context context, String url, ImageView view, int defaultResId) {
         if (NetUtil.isWifiConnected(context)) {
 //            Glide.with(context).load(url).fitCenter().dontAnimate().placeholder(defaultResId).into(view);
+            RequestOptions requestOptions=new RequestOptions().centerCrop().dontAnimate().placeholder(defaultResId);
+            Glide.with(context).load(url).apply(requestOptions).into(view);
         } else {
             view.setImageResource(defaultResId);
         }

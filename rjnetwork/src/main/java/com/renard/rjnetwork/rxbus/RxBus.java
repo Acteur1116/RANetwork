@@ -15,7 +15,7 @@ import rx.subscriptions.CompositeSubscription;
  * Created by Riven_rabbit on 2018/11/29
  */
 public class RxBus {
-    //    private static volatile RxBus mInstance;
+    private static volatile RxBus mInstance;
     private SerializedSubject<Object, Object> mSubject;
     private HashMap<String, CompositeSubscription> mSubscriptionMap;
 
@@ -24,21 +24,20 @@ public class RxBus {
     }
 
     // 这里使用Dagger来处理单例
-    /*
-    private RxBus() {
-        mSubject = new SerializedSubject<>(PublishSubject.create());
-    }
-
-    public static RxBus getInstance() {
-        if (mInstance == null) {
-            synchronized (RxBus.class) {
-                if (mInstance == null) {
-                    mInstance = new RxBus();
-                }
-            }
-        }
-        return mInstance;
-    }*/
+//    private RxBus() {
+//        mSubject = new SerializedSubject<>(PublishSubject.create());
+//    }
+//
+//    public static RxBus getInstance() {
+//        if (mInstance == null) {
+//            synchronized (RxBus.class) {
+//                if (mInstance == null) {
+//                    mInstance = new RxBus();
+//                }
+//            }
+//        }
+//        return mInstance;
+//    }
 
     /**
      * 发送事件
