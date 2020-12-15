@@ -3,7 +3,7 @@ package com.renard.rjnetworkdemo.injector.components;
 
 import com.renard.rjnetwork.injector.PerFragment;
 import com.renard.rjnetwork.injector.components.ApplicationComponent;
-import com.renard.rjnetworkdemo.Fragment.list.NewsListFragment;
+import com.renard.rjnetworkdemo.Fragment.news.list.NewsListFragment;
 import com.renard.rjnetworkdemo.injector.modules.NewsListModule;
 
 import dagger.Component;

@@ -2,7 +2,7 @@ package com.renard.rjnetworkdemo.injector.components;
 
 import com.renard.rjnetwork.injector.PerFragment;
 import com.renard.rjnetwork.injector.components.ApplicationComponent;
-import com.renard.rjnetworkdemo.Fragment.cunfangyigemokuai.NewsMainFragment;
+import com.renard.rjnetworkdemo.Fragment.news.main.NewsMainFragment;
 import com.renard.rjnetworkdemo.injector.modules.NewsMainModule;
 
 import dagger.Component;
@@ -13,5 +13,7 @@ import dagger.Component;
 @PerFragment
 @Component(dependencies = ApplicationComponent.class, modules = NewsMainModule.class)
 public interface NewsMainComponent {
+
     void inject(NewsMainFragment fragment);
+
 }

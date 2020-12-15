@@ -34,6 +34,18 @@
             android:name=".Fragment.channel.ChannelActivity"
             android:screenOrientation="portrait">
         </activity>
+
+        <activity
+            android:name=".Fragment.news.detail.NewsDetailActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Fragment.news.article.NewsArticleActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+
     </application>
 
 </manifest>

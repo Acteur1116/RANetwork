@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import com.orhanobut.logger.Logger;
 import com.renard.rjnetwork.NetworkApplication;
 import com.renard.rjnetwork.utils.NetUtil;
+import com.renard.rjnetworkdemo.Fragment.news.detail.bean.NewsDetailInfo;
 import com.renard.rjnetworkdemo.api.bean.NewsInfo;
 
 import java.io.File;
@@ -175,6 +176,25 @@ public class RetrofitService {
                 .observeOn(AndroidSchedulers.mainThread())
                 .flatMap(_flatMapNews(newsId));
     }
+
+    /**
+     * 获取新闻详情
+     * @return
+     */
+    public static Observable<NewsDetailInfo> getNewsDetail(final String newsId){
+        return ApiService.getNewsDetail(newsId)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .flatMap(new Func1<Map<String, NewsDetailInfo>, Observable<NewsDetailInfo>>() {
+                    @Override
+                    public Observable<NewsDetailInfo> call(Map<String, NewsDetailInfo> newsDetailMap) {
+                        return Observable.just(newsDetailMap.get(newsId));
+                    }
+                });
+    }
+
 
     /******************************************* 转换器 **********************************************/
 

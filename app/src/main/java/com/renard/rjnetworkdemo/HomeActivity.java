@@ -16,10 +16,8 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.renard.rjnetwork.Base.BaseActivity;
-import com.renard.rjnetworkdemo.Fragment.cunfangyigemokuai.NewsMainFragment;
+import com.renard.rjnetworkdemo.Fragment.news.main.NewsMainFragment;
 import com.tbruyelle.rxpermissions.RxPermissions;
-
-import java.io.File;
 
 import butterknife.BindView;
 import rx.functions.Action1;

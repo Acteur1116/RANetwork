@@ -2,4 +2,7 @@
 <resources>
     <dimen name="news_icon_height">75dp</dimen>
     <dimen name="news_icon_width">100dp</dimen>
+
+
+    <dimen name="pull_critical_distance">70dp</dimen>
 </resources>

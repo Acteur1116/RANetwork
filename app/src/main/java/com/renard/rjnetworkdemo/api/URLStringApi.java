@@ -1,6 +1,7 @@
 package com.renard.rjnetworkdemo.api;
 
 import com.renard.rjnetwork.local.table.BeautyPhotoInfo;
+import com.renard.rjnetworkdemo.Fragment.news.detail.bean.NewsDetailInfo;
 import com.renard.rjnetworkdemo.api.bean.NewsInfo;
 
 import java.util.List;
@@ -33,6 +34,17 @@ public interface URLStringApi {
     @GET("nc/article/{type}/{id}/{startPage}-20.html")
     Observable<Map<String, List<NewsInfo>>> getNewsList(@Path("type") String type, @Path("id") String id,
                                                         @Path("startPage") int startPage);
+
+    /**
+     * 获取新闻详情
+     * eg: http://c.3g.163.com/nc/article/BV56RVG600011229/full.html
+     *
+     * @param newsId 专题ID
+     * @return
+     */
+    @Headers(AVOID_HTTP403_FORBIDDEN)
+    @GET("nc/article/{newsId}/full.html")
+    Observable<Map<String, NewsDetailInfo>> getNewsDetail(@Path("newsId") String newsId);
 
     /**
      * 获取美女图片，这个API不完整，省略了好多参数

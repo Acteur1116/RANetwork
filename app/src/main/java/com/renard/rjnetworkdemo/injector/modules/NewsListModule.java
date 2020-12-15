@@ -5,8 +5,8 @@ package com.renard.rjnetworkdemo.injector.modules;
 import com.renard.rjnetwork.Base.BasePresenter;
 import com.renard.rjnetwork.injector.PerFragment;
 import com.renard.rjnetwork.recyclerview.adapter.BaseQuickAdapter;
-import com.renard.rjnetworkdemo.Fragment.list.NewsListFragment;
-import com.renard.rjnetworkdemo.Fragment.list.NewsListPresenter;
+import com.renard.rjnetworkdemo.Fragment.news.list.NewsListFragment;
+import com.renard.rjnetworkdemo.Fragment.news.list.NewsListPresenter;
 import com.renard.rjnetworkdemo.adapter.NewsMultiListAdapter;
 
 import dagger.Module;

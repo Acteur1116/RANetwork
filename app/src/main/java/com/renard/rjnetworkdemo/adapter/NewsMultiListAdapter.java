@@ -11,6 +11,8 @@ import com.renard.rjnetwork.utils.ImageLoader;
 import com.renard.rjnetwork.utils.ListUtils;
 import com.renard.rjnetwork.utils.StringUtils;
 import com.renard.rjnetwork.widget.RippleView;
+import com.renard.rjnetworkdemo.Fragment.news.article.NewsArticleActivity;
+import com.renard.rjnetworkdemo.Fragment.news.detail.NewsDetailActivity;
 import com.renard.rjnetworkdemo.R;
 import com.renard.rjnetworkdemo.adapter.item.NewsMultiItem;
 import com.renard.rjnetworkdemo.api.NewsUtils;
@@ -74,13 +76,13 @@ public class NewsMultiListAdapter extends BaseMultiItemQuickAdapter<NewsMultiIte
         rippleLayout.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
             public void onComplete(RippleView rippleView) {
-//                if (NewsUtils.isNewsSpecial(item.getSkipType())) {
+                if (NewsUtils.isNewsSpecial(item.getSkipType())) {
 //                    SpecialActivity.launch(mContext, item.getSpecialID());
-//                } else {
-//                    // 旧的实现方式和网易的比较相近，感兴趣的可以切换看看
-////                    NewsDetailActivity.launch(mContext, item.getPostid());
-//                    NewsArticleActivity.launch(mContext, item.getPostid());
-//                }
+                } else {
+                    // 旧的实现方式和网易的比较相近，感兴趣的可以切换看看
+//                    NewsDetailActivity.launch(mContext, item.getPostid());
+                    NewsArticleActivity.launch(mContext, item.getPostid());
+                }
             }
         });
     }

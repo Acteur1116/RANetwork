@@ -19,6 +19,10 @@ import android.preference.PreferenceManager;
  */
 public class PreferencesUtils {
 
+    public static final String NO_IMAGE_KEY = "setting_no_image";
+    public static final String SAVE_PATH_KEY = "setting_save_path";
+
+    public static final String DEFAULT_SAVE_PATH = "/storage/emulated/0/RjNetWork";
 
     private PreferencesUtils() {
         throw new AssertionError();
@@ -29,18 +33,18 @@ public class PreferencesUtils {
      * @param context
      * @return
      */
-//    public static String getSavePath(Context context) {
-//        return getString(context, SettingsFragment.SAVE_PATH_KEY, SettingsFragment.DEFAULT_SAVE_PATH);
-//    }
+    public static String getSavePath(Context context) {
+        return getString(context, SAVE_PATH_KEY, DEFAULT_SAVE_PATH);
+    }
 
     /**
      * 是否非Wifi下不加载图片
      * @param context
      * @return
      */
-//    public static boolean isShowImageAlways(Context context) {
-//        return getBoolean(context, SettingsFragment.NO_IMAGE_KEY, false);
-//    }
+    public static boolean isShowImageAlways(Context context) {
+        return getBoolean(context,NO_IMAGE_KEY, false);
+    }
 
     /**
      * get string preferences
