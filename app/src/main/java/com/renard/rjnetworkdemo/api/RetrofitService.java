@@ -8,6 +8,9 @@ import com.renard.rjnetwork.NetworkApplication;
 import com.renard.rjnetwork.utils.NetUtil;
 import com.renard.rjnetworkdemo.Fragment.news.detail.bean.NewsDetailInfo;
 import com.renard.rjnetworkdemo.api.bean.NewsInfo;
+import com.renard.rjnetwork.local.table.BeautyPhotoInfo;
+import com.renard.rjnetworkdemo.api.bean.WelfarePhotoInfo;
+import com.renard.rjnetworkdemo.api.bean.WelfarePhotoList;
 
 import java.io.File;
 import java.io.IOException;
@@ -194,6 +197,27 @@ public class RetrofitService {
                     }
                 });
     }
+    /**
+     * 获取图片
+     * @return
+     */
+    public static Observable<List<BeautyPhotoInfo>> getBeautyPhoto(int page) {
+        return sWelfareService.getBeautyPhoto(page * INCREASE_PAGE)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .flatMap(_flatMapPhotos());
+    }
+
+    public static Observable<WelfarePhotoInfo> getWelfarePhoto(int page) {
+        return sWelfareService.getWelfarePhoto(page)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .flatMap(_flatMapWelfarePhotos());
+    }
 
 
     /******************************************* 转换器 **********************************************/
@@ -239,6 +263,31 @@ public class RetrofitService {
             @Override
             public Observable<NewsInfo> call(Map<String, List<NewsInfo>> newsListMap) {
                 return Observable.from(newsListMap.get(typeStr));
+            }
+        };
+    }
+
+    /**
+     * 类型转换
+     * @return
+     */
+    private static Func1<Map<String, List<BeautyPhotoInfo>>, Observable<List<BeautyPhotoInfo>>> _flatMapPhotos() {
+        return new Func1<Map<String, List<BeautyPhotoInfo>>, Observable<List<BeautyPhotoInfo>>>() {
+            @Override
+            public Observable<List<BeautyPhotoInfo>> call(Map<String, List<BeautyPhotoInfo>> newsListMap) {
+                return Observable.just(newsListMap.get("美女"));
+            }
+        };
+    }
+
+    private static Func1<WelfarePhotoList, Observable<WelfarePhotoInfo>> _flatMapWelfarePhotos() {
+        return new Func1<WelfarePhotoList, Observable<WelfarePhotoInfo>>() {
+            @Override
+            public Observable<WelfarePhotoInfo> call(WelfarePhotoList welfarePhotoList) {
+                if (welfarePhotoList.getData().size() == 0) {
+                    return Observable.empty();
+                }
+                return Observable.from(welfarePhotoList.getData());
             }
         };
     }

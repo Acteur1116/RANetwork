@@ -2,6 +2,7 @@ package com.renard.rjnetworkdemo.local.dao;
 
 import android.content.Context;
 
+
 import com.renard.rjnetwork.local.table.DaoSession;
 import com.renard.rjnetwork.local.table.NewsTypeInfo;
 import com.renard.rjnetwork.local.table.NewsTypeInfoDao;

@@ -1,8 +1,8 @@
 package com.renard.rjnetworkdemo.api;
 
-import com.renard.rjnetwork.local.table.BeautyPhotoInfo;
 import com.renard.rjnetworkdemo.Fragment.news.detail.bean.NewsDetailInfo;
 import com.renard.rjnetworkdemo.api.bean.NewsInfo;
+import com.renard.rjnetwork.local.table.BeautyPhotoInfo;
 
 import java.util.List;
 import java.util.Map;

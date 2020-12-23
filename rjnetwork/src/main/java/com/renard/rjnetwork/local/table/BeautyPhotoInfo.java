@@ -7,49 +7,16 @@ import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 
+import java.util.List;
+
 /**
- * Created by long on 2016/9/2.
- * 美女图片
+ * Created by Riven_rabbit on 12/15/20
+ *
+ * @author suyanan
  */
 @Entity
 public class BeautyPhotoInfo implements Parcelable {
 
-    /**
-     * adtype : 0
-     * boardid : comment_bbs
-     * clkNum : 0
-     * digest : 长发美女  郭碧婷
-     * docid : BQSOIFA29001IFA3
-     * downTimes : 1264
-     * img : http://dmr.nosdn.127.net/w_TEGSpvSxskhGnIuNAt5Q==/6896093022273156436.jpg
-     * imgType : 0
-     * imgsrc : http://dmr.nosdn.127.net/w_TEGSpvSxskhGnIuNAt5Q==/6896093022273156436.jpg
-     * picCount : 0
-     * pixel : 700*467
-     * program : HY
-     * prompt : 成功为您推荐20条新内容
-     * recType : 0
-     * replyCount : 74
-     * replyid : BQSOIFA29001IFA3
-     * source : 堆糖网
-     * title : 长发美女  郭碧婷
-     * upTimes : 4808
-     */
-//    private int adtype;
-//    private String boardid;
-//    private int clkNum;
-//    private String digest;
-//    private int downTimes;
-//    private int imgType;
-//    private int picCount;
-    //    private String program;
-//    private String prompt;
-//    private int recType;
-//    private int replyCount;
-//    private String replyid;
-//    private String source;
-//    private int upTimes;
-    //    private String img;
     @Id
     private String imgsrc;
     private String pixel;
@@ -173,7 +140,7 @@ public class BeautyPhotoInfo implements Parcelable {
 
     @Generated(hash = 215652306)
     public BeautyPhotoInfo(String imgsrc, String pixel, String docid, String title,
-            boolean isLove, boolean isPraise, boolean isDownload) {
+                           boolean isLove, boolean isPraise, boolean isDownload) {
         this.imgsrc = imgsrc;
         this.pixel = pixel;
         this.docid = docid;
@@ -212,3 +179,4 @@ public class BeautyPhotoInfo implements Parcelable {
         return imgsrc.hashCode();
     }
 }
+

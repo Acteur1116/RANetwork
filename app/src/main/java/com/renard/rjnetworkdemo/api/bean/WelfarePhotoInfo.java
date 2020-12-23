@@ -22,10 +22,8 @@ public class WelfarePhotoInfo {
     private String createdAt;
     private String desc;
     private String publishedAt;
-    private String source;
     private String type;
     private String url;
-    private boolean used;
     private String who;
     // 保存图片宽高
     private String pixel;
@@ -70,13 +68,6 @@ public class WelfarePhotoInfo {
         this.publishedAt = publishedAt;
     }
 
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
-    }
 
     public String getType() {
         return type;
@@ -94,13 +85,6 @@ public class WelfarePhotoInfo {
         this.url = url;
     }
 
-    public boolean isUsed() {
-        return used;
-    }
-
-    public void setUsed(boolean used) {
-        this.used = used;
-    }
 
     public String getWho() {
         return who;
@@ -117,10 +101,8 @@ public class WelfarePhotoInfo {
                 ", createdAt='" + createdAt + '\'' +
                 ", desc='" + desc + '\'' +
                 ", publishedAt='" + publishedAt + '\'' +
-                ", source='" + source + '\'' +
                 ", type='" + type + '\'' +
                 ", url='" + url + '\'' +
-                ", used=" + used +
                 ", who='" + who + '\'' +
                 ", pixel='" + pixel + '\'' +
                 '}';
