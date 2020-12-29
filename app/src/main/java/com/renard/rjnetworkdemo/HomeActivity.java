@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.renard.rjnetwork.Base.BaseActivity;
 import com.renard.rjnetworkdemo.Fragment.news.main.NewsMainFragment;
 import com.renard.rjnetworkdemo.Fragment.photo.main.PhotoMainFragment;
+import com.renard.rjnetworkdemo.Fragment.video.main.VideoMainFragment;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
 import butterknife.BindView;
@@ -52,7 +53,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
                     replaceFragment(R.id.fl_container, new PhotoMainFragment(), mSparseTags.get(R.id.nav_photos));
                     break;
                 case R.id.nav_videos:
-                    replaceFragment(R.id.fl_container, new NewsMainFragment(), mSparseTags.get(R.id.nav_videos));
+                    replaceFragment(R.id.fl_container, new VideoMainFragment(), mSparseTags.get(R.id.nav_videos));
                     break;
                 case R.id.nav_setting:
 

@@ -5,6 +5,7 @@ import android.text.TextUtils;
 
 import com.orhanobut.logger.Logger;
 import com.renard.rjnetwork.NetworkApplication;
+import com.renard.rjnetwork.local.table.VideoInfo;
 import com.renard.rjnetwork.utils.NetUtil;
 import com.renard.rjnetworkdemo.Fragment.news.detail.bean.NewsDetailInfo;
 import com.renard.rjnetworkdemo.api.bean.NewsInfo;
@@ -219,6 +220,19 @@ public class RetrofitService {
                 .flatMap(_flatMapWelfarePhotos());
     }
 
+    /**
+     * 获取视频列表
+     * @return
+     */
+    public static Observable<List<VideoInfo>> getVideoList(String videoId, int page) {
+        return ApiService.getVideoList(videoId, page * INCREASE_PAGE / 2)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .flatMap(_flatMapVideo(videoId));
+    }
+
 
     /******************************************* 转换器 **********************************************/
 
@@ -288,6 +302,20 @@ public class RetrofitService {
                     return Observable.empty();
                 }
                 return Observable.from(welfarePhotoList.getData());
+            }
+        };
+    }
+
+    /**
+     * 类型转换
+     * @param typeStr 视频类型
+     * @return
+     */
+    private static Func1<Map<String, List<VideoInfo>>, Observable<List<VideoInfo>>> _flatMapVideo(final String typeStr) {
+        return new Func1<Map<String, List<VideoInfo>>, Observable<List<VideoInfo>>>() {
+            @Override
+            public Observable<List<VideoInfo>> call(Map<String, List<VideoInfo>> newsListMap) {
+                return Observable.just(newsListMap.get(typeStr));
             }
         };
     }

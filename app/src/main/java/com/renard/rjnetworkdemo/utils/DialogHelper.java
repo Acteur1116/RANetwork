@@ -6,8 +6,12 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 
 import com.flyco.dialog.widget.popup.BubblePopup;
+import com.renard.downloaderlib.model.DownloadStatus;
+import com.renard.rjnetwork.local.table.VideoInfo;
 import com.renard.rjnetwork.utils.SDCardUtils;
 import com.renard.rjnetwork.utils.StringUtils;
+import com.renard.rjnetworkdemo.engine.DownloaderWrapper;
+import com.renard.rjnetworkdemo.manage.download.DownloadActivity;
 
 /**
  * Created by Riven_rabbit on 12/10/20
@@ -19,20 +23,20 @@ public final class DialogHelper {
         throw new AssertionError();
     }
 
-//    public static void downloadDialog(Context context, final VideoInfo data) {
-//        String title = "剩余容量(" + StringUtils.convertStorageNoB(SDCardUtils.getFreeSpaceBytes()) + ")";
-//        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//        builder.setTitle(title)
-//                .setMessage("下载需要大量流量，在非wifi下请慎重，是否下载?")
-//                .setNegativeButton("取消", null)
-//                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        DownloaderWrapper.start(data);
-//                    }
-//                });
-//        builder.create().show();
-//    }
+    public static void downloadDialog(Context context, final VideoInfo data) {
+        String title = "剩余容量(" + StringUtils.convertStorageNoB(SDCardUtils.getFreeSpaceBytes()) + ")";
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(title)
+                .setMessage("下载需要大量流量，在非wifi下请慎重，是否下载?")
+                .setNegativeButton("取消", null)
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        DownloaderWrapper.start(data);
+                    }
+                });
+        builder.create().show();
+    }
 
     /**
      * 下载对话框
@@ -54,29 +58,29 @@ public final class DialogHelper {
      * @param context
      * @param data
      */
-//    public static void checkDialog(final Context context, final VideoInfo data) {
-//        String msg;
-//        if (data.getDownloadStatus() == DownloadStatus.COMPLETE) {
-//            msg = "任务已缓存，点击查看";
-//        } else {
-//            msg = "任务正在缓存，点击查看";
-//        }
-//        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//        builder.setTitle("提示")
-//                .setMessage(msg)
-//                .setNegativeButton("取消", null)
-//                .setPositiveButton("查看任务", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        if (data.getDownloadStatus() == DownloadStatus.COMPLETE) {
-//                            DownloadActivity.launch(context, 0);
-//                        } else {
-//                            DownloadActivity.launch(context, 1);
-//                        }
-//                    }
-//                });
-//        builder.create().show();
-//    }
+    public static void checkDialog(final Context context, final VideoInfo data) {
+        String msg;
+        if (data.getDownloadStatus() == DownloadStatus.COMPLETE) {
+            msg = "任务已缓存，点击查看";
+        } else {
+            msg = "任务正在缓存，点击查看";
+        }
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("提示")
+                .setMessage(msg)
+                .setNegativeButton("取消", null)
+                .setPositiveButton("查看任务", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if (data.getDownloadStatus() == DownloadStatus.COMPLETE) {
+                            DownloadActivity.launch(context, 0);
+                        } else {
+                            DownloadActivity.launch(context, 1);
+                        }
+                    }
+                });
+        builder.create().show();
+    }
 
     /**
      * 删除

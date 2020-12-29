@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Riven_rabbit on 2018/12/3
  */
-public interface ILocalPresenter <T> extends BasePresenter {
+public interface LocalPresenter <T> extends BasePresenter {
 
     /**
      * 插入数据

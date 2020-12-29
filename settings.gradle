@@ -1,3 +1,5 @@
+include ':taglayout'
+include ':downloaderLib'
 include ':playerview'
 include ':richtext'
 include ':app', ':rjnetwork'
