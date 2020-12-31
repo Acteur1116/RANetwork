@@ -1,5 +1,6 @@
 package com.renard.rjnetworkdemo.Fragment.video.player;
 
+import com.renard.downloaderlib.model.DownloadStatus;
 import com.renard.rjnetwork.local.table.DanmakuInfo;
 import com.renard.rjnetwork.local.table.DanmakuInfoDao;
 import com.renard.rjnetwork.local.table.VideoInfo;
@@ -101,13 +102,13 @@ public class VideoPlayerPresenter implements VideoPresenter{
 
     @Override
     public void delete(VideoInfo data) {
-//        if (!data.isCollect()&&data.getDownloadStatus()== DownloadStatus.NORMAL){
-//            mDbDao.delete(data);
-//            mIsContains=false;
-//        }else {
-//            mDbDao.update(data);
-//        }
-//        mRxBus.post(new VideoEvent());
+        if (!data.isCollect()&&data.getDownloadStatus()== DownloadStatus.NORMAL){
+            mDbDao.delete(data);
+            mIsContains=false;
+        }else {
+            mDbDao.update(data);
+        }
+        mRxBus.post(new VideoEvent());
     }
 
     @Override

@@ -17,6 +17,7 @@ import com.renard.rjnetworkdemo.R;
 import com.renard.rjnetworkdemo.event.VideoEvent;
 import com.renard.rjnetworkdemo.injector.components.DaggerVideoMainComponent;
 import com.renard.rjnetworkdemo.injector.modules.VideoMainModule;
+import com.renard.rjnetworkdemo.manage.download.DownloadActivity;
 
 import java.util.ArrayList;
 
@@ -88,7 +89,7 @@ public class VideoMainFragment extends BaseFragment<RxBusPresenter> implements V
     protected void updateViews(boolean isRefresh) {
         ArrayList<Fragment> fragments =new ArrayList<>();
         for (int i = 0; i < VIDEO_ID.length; i++) {
-//            fragments.add(VideoListFragment.newInstance())
+            fragments.add(VideoListFragment.newInstance(VIDEO_ID[i]));
         }
         mPagerAdapter.setItems(fragments,VIDEO_TITLE);
         mViewPager.setAdapter(mPagerAdapter);
@@ -117,10 +118,10 @@ public class VideoMainFragment extends BaseFragment<RxBusPresenter> implements V
     public void onClick(View view){
        switch (view.getId()){
            case R.id.fl_love_layout:
-
+//               LoveActivity.launch(mContext, 1);
                break;
            case R.id.fl_download_layout:
-
+//               DownloadActivity.launch(mContext, 0);
                break;
        }
     }

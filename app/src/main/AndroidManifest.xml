@@ -45,6 +45,11 @@
             android:screenOrientation="portrait">
         </activity>
 
+        <activity
+            android:name=".Fragment.video.player.VideoPlayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="adjustNothing">
+        </activity>
 
     </application>
 

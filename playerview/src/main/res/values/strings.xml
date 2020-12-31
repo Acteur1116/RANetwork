@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="video_record" tools:ignore="ExtraTranslation">记忆上次播放到</string>
-    <string name="video_skip" tools:ignore="ExtraTranslation">继续播放</string>
+<resources>
+    <string name="video_record">记忆上次播放到</string>
+    <string name="video_skip">继续播放</string>
 
     <string-array name="media_quality">
         <item>流畅</item>
